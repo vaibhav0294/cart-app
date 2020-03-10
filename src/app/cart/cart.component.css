@@ -1,0 +1,61 @@
+.container-fluid {
+    background: #F5F5F5;
+}
+img{
+    height: 150px;  
+}
+
+.card{
+    padding: 10px;
+}
+
+span{
+    padding-left: 20px;
+    color: green;
+    font-weight: bold;
+}
+
+.details{
+    display: flex;
+}
+
+strong{
+    padding-right: 10px;
+}
+
+.card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
+}
+
+.change-quantity,i{
+    font-size:35px;
+    margin-left:10px;
+    cursor: pointer;
+    
+}
+
+input{
+    width:30px;
+    height: 30px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.shopping-list-mobile{display: none}
+
+@media screen and (min-width: 767px) and (max-width: 1024px) {
+    .shopping-list-mobile{display: none}
+  }
+
+/* @media(max-width:576){
+    .shopping-list-loptop{display: none}
+    .shopping-list-mobile{display: flex}
+}
+
+@media(min-width : 768px){
+    .shopping-list-mobile{display: none}
+    .shopping-list-loptop{display: flex}
+
+} */

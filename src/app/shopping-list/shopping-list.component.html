@@ -1,0 +1,80 @@
+<div class="container-fluid no gutters">
+
+    <div class="mobile-view">
+        <div class="row">
+            <div class="col-12 no-gutters d-flex d-sm-none" style="display: flex">
+                <div class="col-6">
+                    <app-sort (sortBy)="getSortByValue($event)"></app-sort>
+
+                </div>
+                <div class="col-6">
+                    <app-filter (filterParams)="setMinMaxFilter($event)"></app-filter>
+                </div>
+            </div>
+        </div>
+
+        <div class="row d-flex d-sm-none">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12"
+                *ngFor="let product of (productList | priceRangeFilter:min:max | sortByPrice:sortByParam)">
+                <div class="card" style="width: 100%;" *ngIf="product">
+                    <img class="card-img-top" src="{{product.img_url}}" alt="Card image cap">
+                    <div class="card-body">
+                        <h6 class="card-title">{{product.name}}</h6>
+                        <p class="card-text">
+                            <i class="fa fa-inr" style="font-size:13px"></i>
+                            <strong>{{product.price}}</strong>
+
+                            <del>{{getActualDiscount(product)}}</del> <span>{{product.discount}}% off</span>
+                        </p>
+                        <div class="text-center">
+                            <a (click)="addToCart(product)" class="btn btn-warning">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- --------------------------------------------------------------------------------------------- -->
+
+    <div class="desktop-view">
+    <div class="row " style="background:#F8F8F8">
+        <div class="col-12  d-none d-sm-flex no-gutters">
+
+            <div class="col-2 filter-div">
+                <app-filter (filterParams)="setMinMaxFilter($event)"></app-filter>
+            </div>
+
+            <div class="list col-10">
+
+                <div class="sort-div">
+                    <app-sort (sortBy)="getSortByValue($event)"></app-sort>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12"
+                        *ngFor="let product of (productList | priceRangeFilter:min:max | sortByPrice:sortByParam)">
+                        <div class="card" style="width: 100%;" *ngIf="product">
+                            <img class="card-img-top" src="{{product.img_url}}" alt="Card image cap">
+                            <div class="card-body">
+                                <h6 class="card-title">{{product.name}}</h6>
+                                <p class="card-text">
+                                    <i class="fa fa-inr" style="font-size:13px"></i>
+                                    <strong>{{product.price}}</strong>
+
+                                    <del>{{getActualDiscount(product)}}</del> <span>{{product.discount}}% off</span>
+                                </p>
+                                <div class="text-center">
+                                    <a (click)="addToCart(product)" class="btn btn-warning">Add to cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>

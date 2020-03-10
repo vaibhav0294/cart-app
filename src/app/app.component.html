@@ -1,0 +1,26 @@
+<nav class="navbar navbar-custom justify-content-between">
+    <a class="navbar-brand" style="color:white; font-size:24px"  [routerLink] = "['/home']">Navbar</a>
+    <div class="menu">
+        <div>
+            <i class="fa fa-search mr-sm-2"></i>
+        </div>
+        <div id="ex4">
+            <a [routerLink]="['/cart']"> <i class="fa fa-shopping-cart my-2 my-sm-0"></i>
+
+                <span *ngIf="noOfItemsInCart!=0" class="badge1" [attr.data-badge]="noOfItemsInCart"></span>
+            </a>
+        </div>
+    </div>
+</nav>
+
+
+<router-outlet></router-outlet>
+
+<footer>
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3 ">© 2020 Copyright:
+    </div>
+    <!-- Copyright -->
+
+</footer>
+<!-- Footer -->

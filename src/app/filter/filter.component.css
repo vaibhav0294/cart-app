@@ -1,0 +1,45 @@
+.filter{
+    padding:10px;
+    cursor: pointer;
+}
+.slider{
+    margin-top: 50px;
+}
+
+.h5{
+    padding: 10px;
+}
+
+.btn{
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+.filter-mobile{
+    border: 1px solid lightgray;
+    padding:10px;
+    cursor: pointer;
+}
+
+.my-modal-footer{
+    border-top: 1px solid lightgray;
+    text-align: center;
+}
+
+.cancel{
+    border-right: 1px solid lightgray;
+}
+.cancel, .apply{
+    color: blue;
+    padding: 5px;
+}
+
+.left-handle{
+    color:blue;
+}
+
+.ui.modal { display: block; visibility: hidden; }
+

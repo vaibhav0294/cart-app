@@ -1,0 +1,54 @@
+.sort{
+    border: 1px solid lightgray;
+    padding:10px;
+    cursor: pointer;
+}
+a{    
+    padding-left: 30px;
+    color: gray;
+    padding-top: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor:pointer;
+}
+
+a:hover{
+    color:blue;
+    text-decoration: underline;
+}
+
+a:visited{
+    color:blue;
+    text-decoration: underline;
+}
+
+a:active{
+    text-decoration: underline;
+}
+
+.my-modal-footer{
+    border-top: 1px solid lightgray;
+    text-align: center;
+}
+
+.cancel{
+    border-right: 1px solid lightgray;
+}
+.cancel, .apply{
+    color: blue;
+    padding: 5px;
+    cursor: pointer;
+}
+
+input[type=radio] {
+    width: 20px;
+    height: 20px;
+    padding-left: 10px; 
+    cursor: pointer;
+}
+
+label{
+    margin-left: 5px;
+    font-size: 16px;
+    font-weight: 600;
+}

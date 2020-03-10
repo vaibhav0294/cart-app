@@ -1,0 +1,103 @@
+<div class="container-fluid">
+    <div class="row desktop-view d-none d-md-flex">
+        <div class="col-lg-8 col-md-8  mt-3">
+            <div class="card" *ngFor="let product of productsInCart">
+
+                <div class="card-horizontal">
+                    <div class="col-2 img-square-wrapper">
+                        <img class="" src="{{product.img_url}}" alt="Card image cap">
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 " style="margin-left: 20px">
+                        <h4 class="card-title">{{product.name}}</h4>
+                        <p class="card-text1">
+                            <i class="fa fa-inr" style="font-size:13px"></i>
+                            <strong>{{product.price}}</strong>
+                            <del>{{getActualDiscount(product)}}</del> <span>{{product.discount}}% off</span>
+                        </p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3" style="display:flex">
+                        <i class="fa fa-minus-circle" (click)="removeProductFromCart(product)"></i>
+                        <input type="number" value="1" min="1">
+                        <i class="fa fa-plus-circle" (click)="addToCart(product)"></i>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3">
+                        <h5 (click)="removeProductFromCart(product)">Remove</h5>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-12 col-12" style="padding-top:10px">
+            <div class="card mb-3" *ngIf="noOfItems!=0" style="padding-bottom: 30px">
+                <div class="card-header bg-transparent border-success">
+                    <h4>PRICE DETAILS</h4>
+                </div>
+                <div style="display:flex" *ngFor="let product of productsInCart">
+                    <p>{{product.name}}</p>
+                    <p style="margin-left:10px"><i class="fa fa-inr" style="font-size:13px"></i>{{product.price}}</p>
+                </div>
+                <div>
+                    You Saved {{totalDiscount}}
+                </div>
+                <div class="card-footer bg-transparent border-dark">Total Payable {{totalCartValue}}</div>
+            </div>
+        </div>
+    </div>
+    <div style="text-align:center" *ngIf="noOfItems==0">
+        <h2>Your Cart Is Empty</h2>
+        <a [routerLink]='["/home"]'>Go Back To Shopping</a>
+    </div>
+<!--  -------------------------------------------------------------------------------------------------------------- -->
+    <div class="row mobile-view d-flex d-md-none">
+
+        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 ">
+            <div class="card" *ngFor="let product of productsInCart">
+                <div class="row">
+                    <div class="col-4">
+                        <img class="" src="{{product.img_url}}" alt="Card image cap">
+                    </div>
+                    <div class="col-6" style="margin-left:15px">
+                        <h4 class="card-title">{{product.name}}</h4>
+                        <p>
+                            <i class="fa fa-inr" style="font-size:13px"></i>
+                            <strong>{{product.price}}</strong>
+                            <del>{{getActualDiscount(product)}}</del> <span>{{product.discount}}% off</span>
+                        </p>
+                        <p>
+                            <i class="fa fa-minus-circle" (click)="removeProductFromCart(product)"></i>
+                            <input type="number" value="1" min="1">
+                            <i class="fa fa-plus-circle" (click)="addToCart(product)"></i>
+                        </p>
+                        <p>
+                            <strong style="margin-left:10px;cursor: pointer;"
+                                (click)="removeProductFromCart(product)">Remove</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+
+            <div class="card mb-3" *ngIf="noOfItems!=0" style="padding-bottom: 30px">
+                <div class="card-header bg-transparent border-success">
+                    <h4>PRICE DETAILS</h4>
+                </div>
+                <div style="display:flex" *ngFor="let product of productsInCart">
+                    <p>{{product.name}}</p>
+                    <p style="margin-left:10px"><i class="fa fa-inr" style="font-size:13px"></i>{{product.price}}</p>
+                </div>
+                <div>
+                    You Saved {{totalDiscount}}
+                </div>
+                <div class="card-footer bg-transparent border-dark">Total Payable {{totalCartValue}}</div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
